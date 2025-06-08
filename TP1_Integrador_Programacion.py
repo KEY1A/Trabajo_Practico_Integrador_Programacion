@@ -48,9 +48,9 @@ def quick_sort(lista):
 # Función auxiliar para medir tiempos
 
 def medir_tiempo(funcion, *args):
-    inicio = time.time()
+    inicio = time.perf_counter()
     resultado = funcion(*args)
-    fin = time.time()
+    fin = time.perf_counter()
     return resultado, fin - inicio
 
 # Programa principal de prueba
@@ -85,4 +85,4 @@ if __name__ == "__main__":
 
     print("\nCONCLUSIÓN")
     print("• Quick Sort fue más eficiente que Bubble Sort.")
-    print("• Búsqueda Binaria fue mucho más rápida que la lineal, pero requiere una lista ordenada.")
+    print("• Búsqueda Binaria fue más rápida que la lineal, pero requiere una lista ordenada.")
