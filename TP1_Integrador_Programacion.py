@@ -11,7 +11,7 @@ def busqueda_lineal(lista, objetivo):
             return i
     return -1
 
-# Búsqueda binaria (requiere lista ordenada)
+# Búsqueda binaria 
 def busqueda_binaria(lista, objetivo):
     izquierda, derecha = 0, len(lista) - 1
     while izquierda <= derecha:
@@ -64,24 +64,28 @@ if __name__ == "__main__":
     print("\nORDENAMIENTO")
 
     # Bubble Sort 
-    lista_copia = lista_original.copy()
-    _, tiempo_bubble = medir_tiempo(bubble_sort, lista_copia)
+    lista_copia_bubble = lista_original.copy()
+    _, tiempo_bubble = medir_tiempo(bubble_sort, lista_copia_bubble)
+    print(f"Lista ordenada con Bubble Sort (primeros 20 elementos): {lista_copia_bubble[:20]}")
     print(f"Bubble Sort: {tiempo_bubble:.4f} segundos")
+    
 
     # Quick Sort
-    lista_copia = lista_original.copy()
-    lista_ordenada, tiempo_quick = medir_tiempo(quick_sort, lista_copia)
+    lista_copia_quick = lista_original.copy()
+    lista_ordenada_quick, tiempo_quick = medir_tiempo(quick_sort, lista_copia_quick)
+    print(f"Lista ordenada con Quick Sort (primeros 20 elementos): {lista_ordenada_quick[:20]}")
     print(f"Quick Sort: {tiempo_quick:.4f} segundos")
+    
 
     print("\nBÚSQUEDA")
 
     # Búsqueda Lineal
-    _, tiempo_lineal = medir_tiempo(busqueda_lineal, lista_original, objetivo)
-    print(f"Búsqueda Lineal: {tiempo_lineal:.6f} segundos")
+    indice_lineal, tiempo_lineal = medir_tiempo(busqueda_lineal, lista_original, objetivo)
+    print(f"Búsqueda Lineal: índice {indice_lineal}, tiempo {tiempo_lineal:.6f} segundos")
 
     # Búsqueda Binaria 
-    _, tiempo_binaria = medir_tiempo(busqueda_binaria, lista_ordenada, objetivo)
-    print(f"Búsqueda Binaria: {tiempo_binaria:.6f} segundos")
+    indice_binaria, tiempo_binaria = medir_tiempo(busqueda_binaria, lista_ordenada_quick, objetivo)
+    print(f"Búsqueda Binaria: índice {indice_binaria}, tiempo {tiempo_binaria:.6f} segundos")
 
     print("\nCONCLUSIÓN")
     print("• Quick Sort fue más eficiente que Bubble Sort.")
