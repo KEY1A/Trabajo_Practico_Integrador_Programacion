@@ -1,5 +1,5 @@
 # Trabajo Practico Integrador Programacion
-Integrantes: Andres Vizone y Keyla Valdes
+Integrantes: Andres Vizone y Keyla Valdes -
 Comision 9
 
 En este trabajo se realiza un análisis comparativo de diferentes algoritmos de
